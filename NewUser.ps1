@@ -1,6 +1,6 @@
 #=======================================================================================================#
 # Usage : Ce script permet d'ajouter un utilisateur dans l'AD et de créer un dossier partagé a son nom  #
-# Cmd : Interactif ou silencieux avec => powershell ./NewUser&Folder.ps1 -Prenom -Nom -GroupName        #
+# Cmd : Interactif ou silencieux avec => powershell ./NewUser.ps1 -Prenom -Nom -GroupName        #
 # Version : 2.3                                                                                         #
 # Auteur : Zeboudj Tristan                                                                              #
 #=======================================================================================================#
