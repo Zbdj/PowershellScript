@@ -19,7 +19,7 @@ Executer en ligne de commande avec un argument GroupName de type String => *powe
 Ce script permet de lister les différents groupes dans lesquel l'utilisateur est membre, puis enregistre la réponse dans un fichier .txt
 Executer en ligne de commande avec un argument Username de type String => *powershell ./GetGroupAd.ps1 -Username "afirmerie"*
 
-## saveData.ps1
+## P7_Zeboudj_Script04.ps1
 
 Ce script permet de sauvegarder les dossiers de l'utilisateur sur le serveur Windows, dans un dossier partagé nommé « SAV »
 *Le script est lancé avec le planificateur de tâches tous les jours à 17h*
