@@ -7,17 +7,17 @@ Les scripts sont interactif si les arguments ne sont pas fournis.
 ## GetGroupeAd.ps1
 
 Ce script permet de lister les différents groupes dans lesquel l'utilisateur est membre, puis enregistre la réponse dans un fichier .txt
-Executer en ligne de commande avec un argument Username de type String => *powershell ./GetGroupAd.ps1 -Username String*
+Executer en ligne de commande avec un argument Username de type String => *powershell ./GetGroupAd.ps1 -Username "afirmerie"*
 
 ## ListMembers.ps1
 
 Ce script permet de lister tous les membres d'un groupe AD, puis enregistre la réponse dans un fichier .txt
-Executer en ligne de commande avec un argument GroupName de type String => *powershell ./ListerMembres.ps1 -GroupName String*
+Executer en ligne de commande avec un argument GroupName de type String => *powershell ./ListerMembres.ps1 -GroupName "Accueil"*
 
 ## NewUser.ps1
 
 Ce script permet d'ajouter un utilisateur dans l'AD et de créer un dossier partagé à son nom, seul le nouvel utilisateur et l’administrateur auront accès à ce dossier
-Executer en ligne de commande avec trois arguments Prénom,  Nom et GroupName, de type String => *powershell ./NewUser.ps1 -Prenom -Nom -GroupName*
+Executer en ligne de commande avec trois arguments Prénom,  Nom et GroupName, de type String => *powershell ./NewUser.ps1 -Prenom "Alain" -Nom "Firmerie" -GroupName "Direction Generale"*
 
 ## saveData.ps1
 
