@@ -1,4 +1,4 @@
-﻿#===========================================================================================#
+#===========================================================================================#
 # Usage : Ce script permet de lister les membres d'un groupe                                #
 # Cmd : Interactif ou silencieux avec => powershell ./ListerMembres.ps1 -GroupName String   #
 # Version : 1.6                                                                             #
@@ -24,23 +24,31 @@ function MembersInGroup{
     }
 
     #Cette commande récupere le nom de tous les utilisateurs présent dans le groupe en question
-    $Response= Get-ADGroupMember -Identity ($GroupName) | select name | Out-String
-    
-    Write-Output "Vous avez choisis le groupe $GroupName, voici les membres :"
-    Write-Output $Response
+    try{
+        $Response = Get-ADGroupMember -Identity ($GroupName)  | select name | Out-String
+    } catch{}
+  
 
-    #La réponse qui contient les noms des utilisateurs du groupe est enregistré dans un fichier .txt avec le nom du groupe en question
-    "Membres du groupe $GroupName `n"+ $Response | Out-File C:\Users\Administrateur\Documents\GroupMembers$GroupName.txt
-
-    $End = Read-Host "`nL'action s'est déroulée avec succès, taper A pour relancer le script ou n'importe quelle touche pour quitter... "
-
-    #Cette condition permet de relancer le script en rapellant la fonction MembersInGroup ou bien de le quitter
-    if($End -eq 'A'){
-        $GroupName = ""
-        MembersInGroup
+    if($Response -eq $null){
+        Write-Output "Le groupe $GroupName n'existe pas dans l'AD... Vous pouvez relancer le script sans paramètre afin d'afficher la liste des groupes présent dans l'AD"
+        return 1
     } else {
-        return 0
+        Write-Output "Vous avez choisis le groupe $GroupName, voici les membres :"
+        Write-Output $Response
+        #La réponse qui contient les noms des utilisateurs du groupe est enregistré dans un fichier .txt avec le nom du groupe en question
+        "Membres du groupe $GroupName `n"+ $Response | Out-File C:\Users\Administrateur\Documents\GroupMembers$GroupName.txt
+
+        $End = Read-Host "`nL'action s'est déroulée avec succès, taper A pour relancer le script ou n'importe quelle touche pour quitter... "
+
+        #Cette condition permet de relancer le script en rapellant la fonction MembersInGroup ou bien de le quitter
+        if($End -eq 'A'){
+            $GroupName = ""
+            MembersInGroup
+        } else {
+            return 0
+        }
     }
+
 }
 
 MembersInGroup
