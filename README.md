@@ -4,15 +4,15 @@ Script Powershell d'automatisation de tâche dans l'Active Directory
 Ce projet "PowershellScript" comporte 4 script versionnés et commentés qui vont permettrent l’automatisation de différentes tâches dans l’active directory.
 Les scripts sont interactif si les arguments ne sont pas fournis.
 
+## P7_Zeboudj_Script02
+
+Ce script permet de lister tous les membres d'un groupe AD, puis enregistre la réponse dans un fichier .txt
+Executer en ligne de commande avec un argument GroupName de type String => *powershell ./ListerMembres.ps1 -GroupName "Accueil"*
+
 ## P7_Zeboudj_Script03
 
 Ce script permet de lister les différents groupes dans lesquel l'utilisateur est membre, puis enregistre la réponse dans un fichier .txt
 Executer en ligne de commande avec un argument Username de type String => *powershell ./GetGroupAd.ps1 -Username "afirmerie"*
-
-## P7_Zeboudj_Script02.ps1
-
-Ce script permet de lister tous les membres d'un groupe AD, puis enregistre la réponse dans un fichier .txt
-Executer en ligne de commande avec un argument GroupName de type String => *powershell ./ListerMembres.ps1 -GroupName "Accueil"*
 
 ## NewUser.ps1
 
