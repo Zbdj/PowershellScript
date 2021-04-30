@@ -9,7 +9,7 @@ Les scripts sont interactif si les arguments ne sont pas fournis.
 Ce script permet de lister les différents groupes dans lesquel l'utilisateur est membre, puis enregistre la réponse dans un fichier .txt
 Executer en ligne de commande avec un argument Username de type String => *powershell ./GetGroupAd.ps1 -Username "afirmerie"*
 
-## ListMembers.ps1
+## P7_Zeboudj_Script02.ps1
 
 Ce script permet de lister tous les membres d'un groupe AD, puis enregistre la réponse dans un fichier .txt
 Executer en ligne de commande avec un argument GroupName de type String => *powershell ./ListerMembres.ps1 -GroupName "Accueil"*
