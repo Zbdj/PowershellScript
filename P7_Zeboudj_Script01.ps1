@@ -1,11 +1,11 @@
 #=======================================================================================================#
 # Usage : Ce script permet d'ajouter un utilisateur dans l'AD et de créer un dossier partagé a son nom  #
-# Cmd : Interactif ou silencieux avec => powershell ./NewUser.ps1 -Prenom -Nom -GroupName        #
+# Cmd : Interactif ou silencieux avec => powershell ./NewUser&Folder.ps1 -Prenom -Nom -GroupNale        #
 # Version : 2.3                                                                                         #
 # Auteur : Zeboudj Tristan                                                                              #
 #=======================================================================================================#
 
-param($Prenom, $Nom, $GroupName)
+param([string]$Prenom, [string]$Nom, [string]$GroupName)
 Import-Module ActiveDirectory
 
 function newUserInAd {
@@ -74,7 +74,11 @@ function newUserInAd {
         $End = Read-Host "`nL'action s'est déroulée avec succès, taper A pour relancer le script ou n'importe quelle touche pour quitter... "
 
             if($End -eq 'A'){
-                newUserInAd
+            $Prenom = ""
+            $Nom = ""
+            $GroupName = ""
+            newUserInAd
+
             } else {
                 return 0
             }
@@ -82,9 +86,12 @@ function newUserInAd {
         $End = Read-Host "L'utilisateur $Prenom,$Nom, existe déja dans l'AD, taper A pour relancer le script ou n'importe quelle touche pour quitter..."
         
             if($End -eq 'A'){
-                newUserInAd
+            $Prenom = ""
+            $Nom = ""
+            $GroupName = ""
+            newUserInAd
             } else {
-                return 0
+                return 1
             }
     }
 }
